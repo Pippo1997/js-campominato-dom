@@ -104,3 +104,11 @@ footer{
     bottom:0;
     left:0;
 }
+
+.red{
+    background-color: red;
+}
+
+.events-none{
+    pointer-events: none;
+}
