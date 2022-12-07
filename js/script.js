@@ -1,37 +1,26 @@
-// *********** ESERCIZO BASE **********
+function createBombsArray(min,max)
+{
+    let bombs =[];
+    let i = 0;
+    while(i<16){
+        let randomnumber = Math.floor(Math.random() * (max - min +1)) + min;
 
-// function genereteGameGrid()
-// {
-//     document.querySelector(`.grid`).innerHTML = ``;
+        if(!bombs.includes(randomnumber)){
+            bombs.push(randomnumber);
+            i++;
+        }
+    }
 
-//     for(let i=0; i<100; i++){
-//         const cell = document.createElement(`div`);
-//         cell.classList.add(`square`);
-//         cell.innerText = i+1;
-//         cell.addEventListener(`click`, function()
-//         {
-//             this.classList.toggle(`clicked`);
-//         });
-//         document.querySelector(`.grid`).appendChild(cell);
-//     }
-
-// };
-
-// document.getElementById(`play-game`).addEventListener(`click`, function()
-// {
-//     genereteGameGrid();
-// });
-
-
-
-// ********** ESERCIZIO BONUS **********
-
+    return bombs;
+};
 
 
 // Funzione che determina il numero delle griglie
 function createNewGame()
 {
     let difficulty = parseInt(document.getElementById(`level`).value);
+
+    let arrayBombs = []
     
     let cellsNumber;
     let cellsPerRow;
@@ -57,6 +46,9 @@ function createNewGame()
     }
 
     genereteGameGrid(cellsNumber, cellsPerRow);
+
+    arrayBombs = createBombsArray(1,cellsNumber)
+    console.log(arrayBombs)
 
 }
 
