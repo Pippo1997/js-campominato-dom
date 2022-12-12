@@ -49,6 +49,20 @@ function createNewGame()
 
 }
 
+//Funzione che mostra tutte le bombe
+function showAllBombs (bombs_array)
+{
+    const cells = document.getElementsByClassName(`square`);
+
+    for(let i = 0; i < cells.length; i++){
+        let cell = cells[i];
+        if (bombs_array.includes(parseInt(cell.innerText))){
+            cell.classList.add(`clicked`);
+            cell.classList.add(`red`);
+        };
+    };
+};
+
 // Funzione che genera la griglia 
 function genereteGameGrid(bombs_array, cellsNumber, cellsPerRow)
 {     
@@ -61,6 +75,8 @@ function genereteGameGrid(bombs_array, cellsNumber, cellsPerRow)
     
     grid.style.width = `${grid_side}px`;
     grid.style.height = `${grid_side}px`;
+
+    let goodCell = 0;
     
     for(let i=0; i<cellsNumber; i++){
         const cell = createSingleCell(i+1, cellsPerRow);
@@ -70,7 +86,12 @@ function genereteGameGrid(bombs_array, cellsNumber, cellsPerRow)
             if(bombs_array.includes(parseInt(this.innerText))){
                 this.classList.add(`red`)
                 grid.classList.add(`events-none`)
-                alert(`hai perso`)
+                showAllBombs(bombs_array);
+                
+                alert(`hai perso una bomba` + this.innerText);
+                alert(goodCell);
+            } else {
+                goodCell++;
             }
         });
         

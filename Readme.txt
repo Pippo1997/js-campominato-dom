@@ -11,8 +11,9 @@ SUPERBONUS 1: Quando si clicca su una bomba e finisce la partita, evitare che si
 SUPERBONUS 2: Visualizzare un messaggio di vittoria se non si clicca su nessuna bomba.
 
 1-Creo una funzione che generi numeri casuali
-1.1-I numeri casuali devono essere compresi tra 1 e la grandezza della griglia (cellsNumber) in base alla difficoltà selezionata
-1.2-Creo un array vuoto un quoi andranno i numeri già usciti
+    1.1-I numeri casuali devono essere compresi tra 1 e la grandezza della griglia (cellsNumber) in base alla difficoltà selezionata
+    1.2-Creo un array vuoto un quoi andranno i numeri già usciti
 2-All'interno della funzione click creo una condizione che:
-2.1-SE premo su una bomba il tasto diventa rosso e perdo
-2.2-ALTRIMENTI continuo a premere i tasti della griglia
+    2.1-SE premo su una bomba il tasto diventa rosso e perdo
+    2.2-ALTRIMENTI continuo a premere i tasti della griglia
+3-Definisco una variabile contatore per tenre traccia del numero di caselle buone cliccate
